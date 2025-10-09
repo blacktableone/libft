@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nisu <nisu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 22:14:03 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/09 14:38:03 by nisu             ###   ########.fr       */
+/*   Created: 2025/10/09 14:08:02 by nisu              #+#    #+#             */
+/*   Updated: 2025/10/09 14:51:40 by nisu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stddef.h>
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	unsigned char	*tmp_dst;
+	unsigned char	*tmp_src;
 
-int		ft_isalpha(int c);
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-void	*ft_memset(void *b, int c, size_t len);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
+	if (!dst && !src)
+		return (dst);
+	tmp_dst = (unsigned char *)dst;
+	tmp_src = (unsigned char *)src;
 
-#endif
+	while (n > 0)
+	{
+		*(tmp_dst++) = *(tmp_src++);
+		n--;
+	}
+	return (dst);
+}

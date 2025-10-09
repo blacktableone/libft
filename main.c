@@ -6,7 +6,7 @@
 /*   By: nisu <nisu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 22:14:10 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/09 13:20:33 by nisu             ###   ########.fr       */
+/*   Updated: 2025/10/09 14:53:07 by nisu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,25 @@ int	main(void)
 	// printf("len of 'hello\n' is %zu\n", ft_strlen("hello\n"));
 	// printf("len of '' is %zu\n", ft_strlen(""));
 	// printf("\n");
-	printf("=== test ft_memset\n");
-	char arr[5];
-	ft_memset(arr,'A',5);
-	for(int i = 0;i < 5; i++)
-		printf("%c",arr[i]);
+	// printf("=== test ft_memset ===\n");
+	// char arr[5];
+	// ft_memset(arr,'A',5);
+	// for (int i = 0;i < 5; i++)
+	// 	printf("%c",arr[i]);
+	// printf("\n");
+	// printf("=== test ft_bzero ===\n");
+	// char arr[5];
+	// ft_bzero(arr, 5);
+	// for (int i = 0; i < 5; i++)
+	// 	printf("%d", arr[i]);
+	// printf("\n");
+	
+	printf("=== test ft_memcpy ===\n");
+	char dst[6];
+	char src[] = "hello";
+	ft_memcpy(dst,src,6);
+	printf("dst = %s\n",dst);
+	printf("src = %s\n",src);
 	printf("\n");
 
 	return (0);
