@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 22:13:57 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/12 06:06:35 by zuzu             ###   ########.fr       */
+/*   Created: 2025/10/12 05:48:03 by zuzu              #+#    #+#             */
+/*   Updated: 2025/10/12 06:16:33 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strrchr(const char *s, int c)
 {
-	const char	*start;
+	const char	*last;
 
-	start = s;
-	while (*s)
-		s++;
-	return (s - start);
+	last = s;
+	while (*last)
+		last++;
+	while (last >= s)
+	{
+		if (*last == (char)c)
+			return ((chat *)last);
+		last--;
+	}
+	return (NULL);
 }

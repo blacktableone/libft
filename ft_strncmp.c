@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 22:13:57 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/12 06:06:35 by zuzu             ###   ########.fr       */
+/*   Created: 2025/10/12 06:24:10 by zuzu              #+#    #+#             */
+/*   Updated: 2025/10/12 06:25:05 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	const char	*start;
-
-	start = s;
-	while (*s)
-		s++;
-	return (s - start);
 }
