@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nisu <nisu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 22:14:10 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/09 14:53:07 by nisu             ###   ########.fr       */
+/*   Updated: 2025/10/12 04:26:30 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 int	main(void)
 {
+	char	dst[6];
+	size_t	len;
+
 	// printf("=== test ft_isalpha ===\n");
 	// printf("ft_isalpha('A') = %d\n", ft_isalpha('A'));
 	// printf("ft_isalpha('0') = %d\n", ft_isalpha('0'));
@@ -60,14 +63,13 @@ int	main(void)
 	// for (int i = 0; i < 5; i++)
 	// 	printf("%d", arr[i]);
 	// printf("\n");
-	
-	printf("=== test ft_memcpy ===\n");
-	char dst[6];
-	char src[] = "hello";
-	ft_memcpy(dst,src,6);
-	printf("dst = %s\n",dst);
-	printf("src = %s\n",src);
+	// printf("=== test ft_memcpy ===\n");
+	// ft_memcpy(dst, src, 6);
+	// printf("dst = %s\n", dst);
+	// printf("src = %s\n", src);
 	printf("\n");
-
+	printf("=== test ft_strlcpy ===\n");
+	len = ft_strlcpy(dst, "HelloWorld", sizeof(dst));
+	printf("dst='%s', src length=%zu\n", dst, len);
 	return (0);
 }
