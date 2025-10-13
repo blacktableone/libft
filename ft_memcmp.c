@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/12 06:24:10 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/13 03:45:00 by zuzu             ###   ########.fr       */
+/*   Created: 2025/10/13 02:29:15 by zuzu              #+#    #+#             */
+/*   Updated: 2025/10/13 02:52:44 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	while (*s1 && *s2 && *s1 == *s2 && n)
+	const unsigned char	*p1;
+	const unsigned char	*p2;
+
+	p1 = s1;
+	p2 = s2;
+	while (n--)
 	{
-		s1++;
-		s2++;
-		n--;
+		if (*p1 != *p2)
+			return (int)(*p1 - *p2);
+		p1++;
+		p2++;
 	}
-	if (n == 0)
-		return (0);
-	return ((unsigned char *)s1 - (unsigned char *)s2);
+	return (0);
 }
