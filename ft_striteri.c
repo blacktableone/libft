@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/12 04:32:00 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/30 06:51:05 by zuzu             ###   ########.fr       */
+/*   Created: 2025/10/28 15:41:11 by zuzu              #+#    #+#             */
+/*   Updated: 2025/10/29 01:20:38 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	d_len;
-	size_t	s_len;
-	size_t	cp_len;
+	unsigned int	i;
 
-	d_len = ft_strlen(dst);
-	s_len = ft_strlen(src);
-	if (d_len >= dstsize)
-		return (dstsize + s_len);
-	cp_len = dstsize - d_len - 1;
-	if (s_len < cp_len)
-		cp_len = s_len;
-	if (cp_len > 0)
-		ft_memcpy(dst + d_len, src, cp_len);
-	dst[d_len + cp_len] = '\0';
-	return (d_len + s_len);
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f (i, &s[i]);
+		i++;
+	}
 }

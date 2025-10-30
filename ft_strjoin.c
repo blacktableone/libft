@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/12 04:32:00 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/30 06:51:05 by zuzu             ###   ########.fr       */
+/*   Created: 2025/10/14 07:32:52 by zuzu              #+#    #+#             */
+/*   Updated: 2025/10/14 08:00:11 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t	d_len;
-	size_t	s_len;
-	size_t	cp_len;
+	char	*ptr;
+	size_t	size1;
+	size_t	size2;
 
-	d_len = ft_strlen(dst);
-	s_len = ft_strlen(src);
-	if (d_len >= dstsize)
-		return (dstsize + s_len);
-	cp_len = dstsize - d_len - 1;
-	if (s_len < cp_len)
-		cp_len = s_len;
-	if (cp_len > 0)
-		ft_memcpy(dst + d_len, src, cp_len);
-	dst[d_len + cp_len] = '\0';
-	return (d_len + s_len);
+	if (!s1 && !s2)
+		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
+	size1 = ft_strlen(s1);
+	size2 = ft_strlen(s2);
+	ptr = (char *)malloc(sizeof(char) * (size1 + size2 + 1));
+	if (!ptr)
+		return (NULL);
+	ft_strlcpy(ptr, s1, size1 + 1);
+	ft_strlcat(ptr, s2, size1 + size2 +1);
+	return (ptr);
 }

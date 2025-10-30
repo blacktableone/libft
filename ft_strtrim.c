@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 14:56:41 by nisu              #+#    #+#             */
-/*   Updated: 2025/10/29 16:53:15 by zuzu             ###   ########.fr       */
+/*   Created: 2025/10/14 08:07:33 by zuzu              #+#    #+#             */
+/*   Updated: 2025/10/30 21:04:13 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t	start;
+	size_t	end;
 
-	if (!dst || !src)
+	start = 0;
+	if (!s1)
 		return (NULL);
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
-	if (d == s || len == 0)
-		return (dst);
-	if (d < s)
-		ft_memcpy(dst, src, len);
-	else
-		while (len--)
-			d[len] = s[len];
-	return (dst);
+	if (!set)
+		return (ft_strdup("s1"));
+	end = ft_strlen(s1);
+	if (end <= ft_strlen(set))
+		return (ft_strdup(""));
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	if (end > 0)
+		end--;
+	while (s1[end] && ft_strrchr(set, s1[end]))
+		end--;
+	if (start > end)
+		return (ft_strdup(""));
+	return (ft_substr(s1, start, end - start + 1));
 }
