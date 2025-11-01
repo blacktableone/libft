@@ -6,7 +6,7 @@
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 07:32:52 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/14 08:00:11 by zuzu             ###   ########.fr       */
+/*   Updated: 2025/10/31 12:05:46 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	size2;
 
 	if (!s1 && !s2)
-		return (NULL);
+		return (ft_strdup(""));
 	if (!s1)
 		return (ft_strdup(s2));
 	if (!s2)
