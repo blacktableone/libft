@@ -6,7 +6,7 @@
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 22:14:03 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/29 02:47:57 by zuzu             ###   ########.fr       */
+/*   Updated: 2025/11/02 10:02:03 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stddef.h>
 # include <unistd.h>
 
+/* Libc functions */
 int		ft_isalpha(int c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -41,6 +42,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
+
+/* Additional functions */
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *s1, const char *set);
@@ -52,4 +55,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/* Bonus functions */
+// t_list	*ft_lstnew(void *content);
 #endif
