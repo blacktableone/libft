@@ -6,7 +6,7 @@
 #    By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/08 01:49:42 by zuzu              #+#    #+#              #
-#    Updated: 2025/10/31 07:56:15 by zuzu             ###   ########.fr        #
+#    Updated: 2025/11/02 08:18:31 by zuzu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,9 +37,8 @@ re: fclean all
 
 # 单独测试某个函数（可选，本地使用）
 # 使用方法: make test FUNCTION=ft_calloc
-test:
-	$(CC) $(CFLAGS) main.c $(FUNCTION).c $(NAME) -o test
-	./test
-
+# test:
+# 	$(CC) $(CFLAGS) main.c $(FUNCTION).c $(NAME) -o test
+# 	./test
 
 .PHONY: all clean fclean re
