@@ -6,7 +6,7 @@
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 02:53:14 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/30 14:28:46 by zuzu             ###   ########.fr       */
+/*   Updated: 2025/11/02 13:23:41 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	n;
 
+	if (!haystack && len == 0)
+		return (NULL);
 	if (*needle == '\0')
 		return ((char *)haystack);
 	n = ft_strlen(needle);

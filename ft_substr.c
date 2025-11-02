@@ -6,7 +6,7 @@
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 05:25:55 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/30 17:44:14 by zuzu             ###   ########.fr       */
+/*   Updated: 2025/11/02 13:27:14 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	if (len > l - start)
 		len = l - start;
 	p = (char *)malloc(sizeof(char) * (len + 1));
+	if (!p)
+		return (NULL);
 	ft_strlcpy(p, s + start, len + 1);
 	return (p);
 }

@@ -6,7 +6,7 @@
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 02:06:37 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/30 21:32:16 by zuzu             ###   ########.fr       */
+/*   Updated: 2025/11/02 13:33:30 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*s;
+	long	num;
 
-	s = ft_itoa(n);
-	if (s)
+	num = n;
+	if (num < 0)
 	{
-		ft_putstr_fd(s, fd);
-		free(s);
+		write(fd, "-", 1);
+		num = -num;
 	}
+	if (num >= 10)
+		ft_putnbr_fd(num / 10, fd);
+	write(fd, &"0123456789"[num % 10], 1);
 }
+

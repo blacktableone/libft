@@ -6,7 +6,7 @@
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 04:32:00 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/30 06:51:05 by zuzu             ###   ########.fr       */
+/*   Updated: 2025/11/02 13:22:34 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	s_len;
 	size_t	cp_len;
 
+	if (!dst && dstsize == 0)
+		return (ft_strlen(src));
+	if (!dst || !src)
+		return (0);
 	d_len = ft_strlen(dst);
 	s_len = ft_strlen(src);
 	if (d_len >= dstsize)
