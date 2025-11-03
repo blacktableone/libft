@@ -6,7 +6,7 @@
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 14:56:41 by nisu              #+#    #+#             */
-/*   Updated: 2025/10/29 16:53:15 by zuzu             ###   ########.fr       */
+/*   Updated: 2025/11/03 12:19:32 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char		*d;
 	const unsigned char	*s;
 
-	if (!dst || !src)
-		return (NULL);
 	d = (unsigned char *)dst;
 	s = (const unsigned char *)src;
 	if (d == s || len == 0)

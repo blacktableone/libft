@@ -6,7 +6,7 @@
 /*   By: zuzu <zuzu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 05:29:27 by zuzu              #+#    #+#             */
-/*   Updated: 2025/10/30 09:05:28 by zuzu             ###   ########.fr       */
+/*   Updated: 2025/11/03 12:19:54 by zuzu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	unsigned char	uc;
+
+	uc = (unsigned char)c;
 	while (*s)
 	{
-		if (*s == (char)c)
+		if ((unsigned char)*s == uc)
 			return ((char *)s);
 		s++;
 	}
-	if (c == 0)
+	if (uc == '\0')
 		return ((char *)s);
 	return (NULL);
 }
